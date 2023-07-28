@@ -38,7 +38,23 @@ docker build -t antipode-lambda .
 ./antipode_lambda run -r 1000
 ./antipode_lambda gather
 ```
-**Note**: The `maestrina` is a convenience script to run all experiments using a single script. 
+
+For the full results obtained in the paper, execute the combinations using the available post and notification storages -- with and without Antipode (`-ant`) enabled:
+
+| Post-Storage | Notification-Storage |
+| :----------: | :------------------: |
+| mysql        | sns                  |
+| dynamo       | mq                   |
+| s3           | dynamo               |
+| cache        |                      |
+
+For the results of percentage of inconsistencies obtained in the paper, we used the following storage combinations and delays:
+- cache-sns: 100 -> 1500 (increments of 100)
+- dynamo-sns: 100, 200, 300, 400, 500 -> 3000 (increments of 250)
+- mysql-sns: 100 -> 1500 (increments of 100)
+- s3-sns: 500, 1000, 10k -> 50k (increments of 5k)
+
+**Note**: The `maestrina` is a convenience script to run all combinations using a single script. 
 If you find any errors we recommend you to use the `antipode_lambda` script as described in the instructions.
 
 After gathering all the results duplicate the `plots/configs/sample.yml` file:
