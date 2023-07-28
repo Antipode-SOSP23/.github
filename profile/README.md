@@ -177,3 +177,12 @@ Now you just plot your results with:
 ### Alibaba Spike
 You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/alibaba-spike/tree/sosp23) and follow the instructions in that repo.
 Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites specially the Spark deployment.**
+
+**NOTE for AE:** We make ourselves available to provide remote access to our Spark cluster which already has the Alibaba dataset loaded. Contact us to arrange remote ssh access.
+If you prefer to use your own cluster (with or without Spark deployed) you need to create your own inventory and adjust the vars. We provide our own in the `config` folder.
+
+```zsh
+./maestro --gsd deploy -inventory configs/gsd-inventory.yml -vars configs/gsd-vars.yml
+./maestro --gsd stats # will generate a file inside the stats folder
+./maestro --gsd plot -stats STATS_FILE_PATH -plots cdf_meta_rcptype_unique_services_and_calls # use the previous generated stats 
+```
