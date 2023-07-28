@@ -62,6 +62,7 @@ After gathering all the results duplicate the `plots/configs/sample.yml` file in
 - Keep the `delay_vs_per_inconsistencies` as is
 - Change the gather paths in `consistency_window` to the ones returned by the `gather` command by selecting only the results where the notification storage is `SNS`. In the end you will have a configuration similar to this:
 ```yml
+consistency_window:
   gather_paths:
     - 'cache-sns/eu-us__antipode__1000-20210913103954'
     - 'cache-sns/eu-us__1000-20210912134647'
