@@ -15,6 +15,8 @@ And you can quickly add it to your references:
 
 ## SOSP 23 
 
+**NOTE for AE:** In the shepherding process we were requested an additional plot. We are in the development process of that.
+
 Here is a quick rundown on how you can obtain the main results from the SOSP23 paper. 
 There are currently 3 main results that come from 3 different repos:
 - [Antipode @ Post-Notification](https://github.com/Antipode-SOSP23/antipode-post-notification)
@@ -171,3 +173,7 @@ Now you just plot your results with:
 ```zsh
 ./plot plots/configs/ae.yml --plots throughput_latency_with_consistency_window
 ```
+
+### Alibaba Spike
+You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/alibaba-spike/tree/sosp23) and follow the instructions in that repo.
+Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites specially the Spark deployment.**
