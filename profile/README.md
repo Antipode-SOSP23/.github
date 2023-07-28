@@ -15,7 +15,7 @@ And you can quickly add it to your references:
 
 ## SOSP 23 
 
-**NOTE for AE:** In the shepherding process we were requested an additional plot. We are in the development process of that.
+**NOTE for AE:** In the shepherding process we were requested an additional plot. We are in the development process of that extra result. When we finish we will update the `sosp23` tag. 
 
 Here is a quick rundown on how you can obtain the main results from the SOSP23 paper. 
 There are currently 3 main results that come from 3 different repos:
@@ -25,6 +25,8 @@ There are currently 3 main results that come from 3 different repos:
 
 There is also a minor result related to the [Alibaba microservice dataset](https://github.com/alibaba/clusterdata/tree/master/cluster-trace-microservices-v2021) which is used as motivation, which you can obtain here:
 - [Antipode @ TrainTicket](https://github.com/Antipode-SOSP23/alibaba-spike)
+
+All scripts were run an Intel Core i7-6700K 4GHz with 8 cores and 16GB memory.
 
 
 ### Antipode @ Post-Notification
