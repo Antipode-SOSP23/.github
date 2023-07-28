@@ -1,6 +1,15 @@
 ## Antipode
 
 
+
+You can read and our paper [Antipode: Enforcing Cross-Service Causal Consistency
+in Distributed Applications](PDF).
+```BibTeX
+@inproceedings{loff2023antipode,
+}
+```
+
+
 ## SOSP 23 
 
 Here is a quick rundown on how you can obtain the main results from the SOSP23 paper. 
