@@ -22,7 +22,7 @@ There is also a minor result related to the [Alibaba microservice dataset](https
 - [Antipode @ TrainTicket](https://github.com/Antipode-SOSP23/alibaba-spike)
 
 
-#### Antipode @ Post-Notification
+### Antipode @ Post-Notification
 
 You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/antipode-post-notification/tree/sosp23) and follow the instructions in that repo.
 Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites and AWS configurations mentioned in instructions.**
@@ -80,15 +80,12 @@ Now you just plot your results with:
 ./plot plots/configs/ae.yml --plots consistency_window
 ```
 
-#### Antipode @ DeathStarBench
+### Antipode @ DeathStarBench
 
 You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/antipode-deathstarbench/tree/sosp23) and follow the instructions in that repo.
 Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites and GCP configurations mentioned in instructions.**
 
 ```zsh
-# Build deployment image -- one time only 
-docker build -t antipode-lambda .
-
 # Run maestrina for all combinations -- if you find errors use the maestro below
 ./maestrina
 
@@ -122,6 +119,50 @@ throughput_latency_with_consistency_window:
 ```
 _Note:_ Each workload should be ran more rounds (for the paper we used 15 rounds).
 
+
+Now you just plot your results with:
+```zsh
+./plot plots/configs/ae.yml --plots throughput_latency_with_consistency_window
+```
+
+
+### Antipode @ Train-Ticket
+You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/antipode-train-ticket/tree/sosp23) and follow the instructions in that repo.
+Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites and GCP configurations mentioned in instructions.**
+```zsh
+# Run maestrina for all combinations -- if you find errors use the maestro below
+./maestrina
+
+# For a single combination
+./maestro --gcp build
+./maestro --gcp deploy -config configs/gcp/socialNetwork/sosp23.yml -clients 1
+./maestro --gcp run
+./maestro --gcp wkld -d 300 -c 1 -t 8
+./maestro --gcp gather
+```
+
+For the full results obtained in the paper, you should run all the following combinations:
+- Fix `clients` to 1
+- Run all thread values with and without Antipode (`-antipode` flag on `run`)
+- Run the following threads: 1, 2, 3, 8, 10, 14
+
+After gathering all the results duplicate the `plots/configs/sample.yml` file into your configuration (e.g. `ae.yml`). 
+Keep only the `throughput_latency_with_consistency_window` key, and add your gathered paths into that file, it should be similar to this:
+```yml
+throughput_latency_with_consistency_window:
+  - 20230720131918-1cli-1threads-antipode_no
+  - 20230720143227-1cli-1threads-antipode_yes
+  - 20230720131918-1cli-2threads-antipode_no
+  - 20230720143227-1cli-2threads-antipode_yes
+  - 20230720131918-1cli-3threads-antipode_no
+  - 20230720143227-1cli-3threads-antipode_yes
+  - 20230720131918-1cli-8threads-antipode_no
+  - 20230720143227-1cli-8threads-antipode_yes
+  - 20230720131918-1cli-10threads-antipode_no
+  - 20230720143227-1cli-10threads-antipode_yes
+  - 20230720131918-1cli-14threads-antipode_no
+  - 20230720143227-1cli-14threads-antipode_yes
+```
 
 Now you just plot your results with:
 ```zsh
