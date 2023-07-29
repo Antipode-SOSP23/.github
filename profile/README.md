@@ -110,19 +110,15 @@ For the full results obtained in the paper, you should run all the following com
 - Run the following rates: 50, 100, 125, 150, 160
 
 After gathering all the results duplicate the `plots/configs/sample.yml` file into your configuration (e.g. `ae.yml`). 
-Keep only the `throughput_latency_with_consistency_window` key, and add your gathered paths into that file, it should be similar to this:
+Keep only the `throughput_latency_with_consistency_window` key, and add your gathered paths into that file, it should be similar to this (note that you need both `us-eu` and  `us-sg`):
 ```yml
 throughput_latency_with_consistency_window:
   - gather/gcp/socialNetwork/compose-post/us-eu-50/20210814065624
-  - gather/gcp/socialNetwork/compose-post/us-eu-100/20210814071451
-  - gather/gcp/socialNetwork/compose-post/us-eu-125/20210814073301
-  - gather/gcp/socialNetwork/compose-post/us-eu-150/20210814075114
-  - gather/gcp/socialNetwork/compose-post/us-eu-160/20210814080933
   - gather/gcp/socialNetwork/compose-post/us-eu-50-antipode/20210814065624
-  - gather/gcp/socialNetwork/compose-post/us-eu-100-antipode/20210814071451
-  - gather/gcp/socialNetwork/compose-post/us-eu-125-antipode/20210814073301
-  - gather/gcp/socialNetwork/compose-post/us-eu-150-antipode/20210814075114
-  - gather/gcp/socialNetwork/compose-post/us-eu-160-antipode/20210814080933
+  # ...
+  - gather/gcp/socialNetwork/compose-post/us-sg-50/20210814065624
+  - gather/gcp/socialNetwork/compose-post/us-sg-50-antipode/20210814065624
+  # ...
 ```
 _Note:_ Each workload should be ran more rounds (for the paper we used 15 rounds).
 
