@@ -15,7 +15,7 @@ And you can quickly add it to your references:
 
 ## SOSP 23 
 
-**NOTE for AE (1):** In the shepherding process we were requested an additional plot. We are in the development process of that extra result. When we finish we will update the `sosp23` tag. 
+**NOTE for AE (1):** In the shepherding process we were requested an additional plot. We are in the development process of that extra result. When we finish we will update the `sosp23` tag.\
 **NOTE for AE (2):** As we discuss in Section 7.4 in our paper, the consistency window results might vary substancionally (due to changes in replication algorithms, bathcing or just simply network conditions. We wanted to highlight this as although results might differ, they do not stem from Antipode but from the underlying datastore.
 
 
