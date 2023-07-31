@@ -16,7 +16,7 @@ And you can quickly add it to your references:
 ## SOSP 23 
 
 **NOTE for AE (1):** In the shepherding process we were requested an additional plot. We are in the development process of that extra result. When we finish we will update the `sosp23` tag.\
-**NOTE for AE (2):** As we discuss in Section 7.4 in our paper, the consistency window results might vary substancionally (due to changes in replication algorithms, bathcing or just simply network conditions. We wanted to highlight this as although results might differ, they do not stem from Antipode but from the underlying datastore.
+**NOTE for AE (2):** As we discuss in Section 7.4 in our paper, the consistency window results might vary substancionally (due to replication semantics, batching, or just simply network conditions). We wanted to highlight this as although results might differ, they do not stem from Antipode but from the conditions of the underlying datastore.
 
 
 Here is a quick rundown on how you can obtain the main results from the SOSP23 paper. 
@@ -107,7 +107,7 @@ Next we provide a quick usage reference to get the main results from the paper. 
 ```
 
 For the full results obtained in the paper, you should run all the following combinations:
-- Fix `clients` to 1, `connections` to 4 and `threads` to 2
+- Set `clients` to 1, `connections` to 4 and `threads` to 2
 - Run all rate values with and without Antipode (`-antipode` flag on `run`)
 - Run the following rates: 50, 100, 125, 150, 160
 
@@ -142,12 +142,12 @@ Next we provide a quick usage reference to get the main results from the paper. 
 ./maestro --gcp build
 ./maestro --gcp deploy -config configs/gcp/socialNetwork/sosp23.yml -clients 1
 ./maestro --gcp run
-./maestro --gcp wkld -d 300 -c 1 -t 8
+./maestro --gcp wkld -d 300 -t 8
 ./maestro --gcp gather
 ```
 
 For the full results obtained in the paper, you should run all the following combinations:
-- Fix `clients` to 1
+- Set `clients` to 1 (already done in the `deploy`)
 - Run all thread values with and without Antipode (`-antipode` flag on `run`)
 - Run the following threads: 1, 2, 3, 8, 10, 14
 
@@ -159,14 +159,7 @@ throughput_latency_with_consistency_window:
   - 20230720143227-1cli-1threads-antipode_yes
   - 20230720131918-1cli-2threads-antipode_no
   - 20230720143227-1cli-2threads-antipode_yes
-  - 20230720131918-1cli-3threads-antipode_no
-  - 20230720143227-1cli-3threads-antipode_yes
-  - 20230720131918-1cli-8threads-antipode_no
-  - 20230720143227-1cli-8threads-antipode_yes
-  - 20230720131918-1cli-10threads-antipode_no
-  - 20230720143227-1cli-10threads-antipode_yes
-  - 20230720131918-1cli-14threads-antipode_no
-  - 20230720143227-1cli-14threads-antipode_yes
+  # ...
 ```
 
 Now you just plot your results with:
