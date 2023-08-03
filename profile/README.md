@@ -1,5 +1,8 @@
-## Antipode
+# Antipode
 
+<picture>
+  <img align="right" width="300" alt="Enso" src="https://github.com/Antipode-SOSP23/.github/assets/1867656/a2668e53-11ad-46f0-b30d-4d9a27871d3c">
+</picture>
 
 Antipode prevents **cross-service inconsistencies** in distributed applications by enforcing cross-service consistency. It propagates metadata both alongside end-to-end requests and within datastores. Antipode enables a novel **cross-service causal consistency** model, which extends existing causality models, and whose enforcement requires us to bring in a series of contributions to address fundamental semantic, scalability, and deployment challenges.
 
