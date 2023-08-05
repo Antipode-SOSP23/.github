@@ -40,9 +40,6 @@ You should checkout the [`sosp23` release](https://github.com/Antipode-SOSP23/an
 Next we provide a quick usage reference to get the main results from the paper. **Don't forget to check the pre-requisites and AWS configurations mentioned in instructions.**
 
 ```zsh
-# Build deployment image -- one time only 
-docker build -t antipode-lambda .
-
 # Run maestrina for all combinations -- if you find errors use the antipode_lambda below
 ./maestrina
 
@@ -50,6 +47,7 @@ docker build -t antipode-lambda .
 ./antipode_lambda build --post-storage mysql --notification-storage sns --writer eu --reader us
 ./antipode_lambda run -r 1000
 ./antipode_lambda gather
+./antipode_lambda clean
 ```
 
 For the full results obtained in the paper, execute the combinations using the available post and notification storages -- with and without Antipode (`-ant`) enabled:
