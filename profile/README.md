@@ -12,6 +12,20 @@ in Distributed Applications](PDF) which was published at SOSP'23.
 And you can quickly add it to your references:
 ```BibTeX
 @inproceedings{loff2023antipode,
+author = {Ferreira Loff, Jo\~{a}o and Porto, Daniel and Garcia, Jo\~{a}o and Mace, Jonathan and Rodrigues, Rodrigo},
+title = {Antipode: Enforcing Cross-Service Causal Consistency in Distributed Applications},
+year = {2023},
+isbn = {9798400702297},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3600006.3613176},
+doi = {10.1145/3600006.3613176},
+abstract = {Modern internet-scale applications suffer from cross-service inconsistencies, arising because applications combine multiple independent and mutually-oblivious datastores. The end-to-end execution flow of each user request spans many different services and datastores along the way, implicitly establishing ordering dependencies among operations at different datastores. Readers should observe this ordering and, in today's systems, they do not.In this work, we present Antipode, a bolt-on technique for preventing cross-service consistency violations in distributed applications. It enforces cross-service consistency by propagating lineages of datastore operations both alongside end-to-end requests and within datastores. Antipode enables a novel cross-service causal consistency model, which extends existing causality models, and whose enforcement requires us to bring in a series of technical contributions to address fundamental semantic, scalability, and deployment challenges. We implemented Antipode as an application-level library, which can easily be integrated into existing applications with minimal effort, is incrementally deployable, and does not require global knowledge of all datastore operations. We apply Antipode to eight open-source and public cloud datastores and two microservice benchmark applications. Our evaluation demonstrates that Antipode is able to prevent cross-service inconsistencies with limited programming effort and less than 2\% impact on end-user latency and throughput.},
+booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles},
+pages = {298–313},
+numpages = {16},
+location = {Koblenz, Germany},
+series = {SOSP '23}
 }
 ```
 
