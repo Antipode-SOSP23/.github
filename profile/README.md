@@ -7,7 +7,7 @@
 Antipode prevents **cross-service inconsistencies** in distributed applications by enforcing cross-service consistency. It propagates metadata both alongside end-to-end requests and within datastores. Antipode enables a novel **cross-service causal consistency** model, which extends existing causality models, and whose enforcement requires us to bring in a series of contributions to address fundamental semantic, scalability, and deployment challenges.
 
 You can read our paper [Antipode: Enforcing Cross-Service Causal Consistency
-in Distributed Applications](PDF) which was published at SOSP'23.
+in Distributed Applications](https://dl.acm.org/doi/10.1145/3600006.3613176) which was published at SOSP'23.
 
 And you can quickly add it to your references:
 ```BibTeX
